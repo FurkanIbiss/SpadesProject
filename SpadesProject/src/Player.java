@@ -2,7 +2,8 @@
  * 
  * A class representing a player in a Spades game.
  */
-public class Player {
+
+public abstract class Player {
 
 	public int bidCount;
 	public int score;
@@ -11,6 +12,25 @@ public class Player {
 	public int trickCount;
 	public Card currentCard;
 	public Suit currentSuit;
+	public int countSpadeBroken;
+
+	/**
+	 * 
+	 * Plays a card according to the rules of the game. The specific implementation
+	 * of this method will vary depending on whether the player is controlled by a
+	 * human or a computer.
+	 */
+	public abstract void play();
+
+	/**
+	 * 
+	 * Plays a card with the specified suit according to the rules of the game. The
+	 * specific implementation of this method will vary depending on whether the
+	 * player is controlled by a human or a computer.
+	 * 
+	 * @param suit the suit to play
+	 */
+	public abstract void play(Suit suit);
 
 	/**
 	 * 
@@ -60,6 +80,7 @@ public class Player {
 	 */
 	public void setCurrentCard(Card currentCard) {
 		this.currentCard = currentCard;
+
 	}
 
 	/**
@@ -119,7 +140,7 @@ public class Player {
 	 * @return the player's bid for the current hand
 	 */
 	public int getBid() {
- 
-		return 0;
+
+		return bidCount;
 	}
 }
