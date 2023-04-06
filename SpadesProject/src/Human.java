@@ -51,18 +51,7 @@ public class Human extends Player {
 				this.currentCard = c;
 				System.out.println("Player 1 [" + this.bidCount + "/" + this.trickCount + "]: " + c.getName());
 
-			} else if (c.suitType == Suit.SPADE && !this.hand.isContainsSuitType(Suit.CLUB)
-					&& !this.hand.isContainsSuitType(Suit.DIAMOND) && !this.hand.isContainsSuitType(Suit.HEART)) {
-				 this.hand.isSpadeBroken = true;
-				this.currentCard = c;
-				System.out.println("Player 1 [" + this.bidCount + "/" + this.trickCount + "]: " + c.getName());
-				this.countSpadeBroken++;
-				if (this.countSpadeBroken == 1) {
-					System.out.println("--------------------SPADE BROKEN" + "------------------------");
-				}
-			}
-
-			else {
+			} else {
 				this.currentCard = c;
 				System.out.println("Player 1 [" + this.bidCount + "/" + this.trickCount + "]: " + c.getName());
 
@@ -97,8 +86,8 @@ public class Human extends Player {
 
 					this.hand.isSpadeBroken = true;
 					this.countSpadeBroken++;
-					if (this.countSpadeBroken == 1) {
-						System.out.println("--------------------SPADE BROKEN" + "------------------------");
+					if(this.countSpadeBroken == 1) {
+						System.out.println("--------------------SPADE BROKEN"+"------------------------");
 					}
 					System.out.println("Player 1 [" + this.bidCount + "/" + this.trickCount + "]: " + c.getName());
 				} else {

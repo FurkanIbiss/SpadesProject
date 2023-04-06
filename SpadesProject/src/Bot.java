@@ -25,20 +25,7 @@ public class Bot extends Player {
 			c = tmp.card;
 			this.currentCard = c;
 			System.out.println(this.getName() + " [" + this.bidCount + "/" + this.trickCount + "]: " + c.getName());
-		} else if (this.hand.isContainsSuitType(Suit.SPADE) && !this.hand.isContainsSuitType(Suit.CLUB)
-				&& !this.hand.isContainsSuitType(Suit.DIAMOND) && !this.hand.isContainsSuitType(Suit.HEART)) {
-            this.hand.isSpadeBroken = true;
-			c = tmp.card;
-			this.currentCard = c;
-			System.out.println(this.getName() + " [" + this.bidCount + "/" + this.trickCount + "]: " + c.getName());
-			this.countSpadeBroken++;
-			if (this.countSpadeBroken == 1) {
-				System.out.println("--------------------SPADE BROKEN" + "------------------------");
-			}
-
-		}
-
-		else if ((!this.hand.isSpadeBroken)
+		} else if ((!this.hand.isSpadeBroken)
 				& (this.hand.hand.numberOfElements() != this.hand.countSuitType(Suit.SPADE))) {
 			while (tmp != null) {
 				if (tmp.card.suitType != Suit.SPADE) {
